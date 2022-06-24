@@ -1,12 +1,15 @@
 import Hello from "./components/Hello";
-import World from "./components/World";
 
 function App() {
+  let list = Array.from({ length: 100 });
+
   return (
     <div>
       <h1>Predefine Function By Browser!</h1>
-      <Hello />
-      <World />
+
+      {list.map((item, index) => (
+        <Hello key={index} />
+      ))}
     </div>
   );
 }

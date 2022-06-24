@@ -1,7 +1,17 @@
+import World from "./World";
+
 function Hello() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="row">
+      <div className="col-12 col-md-4">
+        <World />
+      </div>
+      <div className="col-12 col-md-4">
+        <World />
+      </div>
+      <div className="col-12 col-md-4">
+        <World />
+      </div>
     </div>
   );
 }
