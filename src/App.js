@@ -1,5 +1,5 @@
 import Hello from "./components/Hello";
-import World from "./components/Hello";
+import World from "./components/World";
 
 function App() {
   return (
