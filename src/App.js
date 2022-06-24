@@ -29,9 +29,8 @@ function App() {
           className="form-control form-control-lg my-1 "
           placeholder="Enter City.."
         />
-        <input
+        <textarea
           ref={descRef}
-          type="text"
           className="form-control form-control-lg my-1"
           placeholder="Enter Desc"
         />
