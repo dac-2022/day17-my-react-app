@@ -1,14 +1,17 @@
 import Hello from "./components/Hello";
 
 function App() {
-  let list = ["delhi", "kolkata"];
+  let list1 = [
+    { city: "delhi", desc: "Delhi desc.." },
+    { city: "kochi", desc: "kochi desc" },
+  ];
 
   return (
     <div>
       <h1>Predefine Function By Browser!</h1>
 
-      {list.map((item, index) => (
-        <Hello city={item} key={index} />
+      {list1.map((item, index) => (
+        <Hello item={item} key={index} />
       ))}
     </div>
   );
