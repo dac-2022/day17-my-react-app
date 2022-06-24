@@ -3,14 +3,19 @@ import Hello from "./components/Hello";
 
 function App() {
   let cityRef = useRef();
-  let [list, setList] = useState([{ city: "delhi", desc: "Delhi desc.." }]);
+  let descRef = useRef();
+  let [list, setList] = useState([]);
 
   const addMoreRecord = () => {
-    let newRecord = { city: cityRef.current.value, desc: "TVM desc.." };
+    let newRecord = {
+      city: cityRef.current.value,
+      desc: descRef.current.value,
+    };
     let newList = [newRecord, ...list];
     setList(newList);
 
     cityRef.current.value = "";
+    descRef.current.value = "";
   };
 
   return (
@@ -21,8 +26,14 @@ function App() {
         <input
           ref={cityRef}
           type="text"
-          className="form-control form-control-lg "
+          className="form-control form-control-lg my-1 "
           placeholder="Enter City.."
+        />
+        <input
+          ref={descRef}
+          type="text"
+          className="form-control form-control-lg my-1"
+          placeholder="Enter Desc"
         />
         <input
           type="button"
