@@ -12,7 +12,7 @@ function App() {
 
 // <Hello />
 function Hello() {
-  return <h1>I am also Tag! Hello JSX!</h1>;
+  return <h1>I am also Tag!</h1>;
 }
 
 export default App;
