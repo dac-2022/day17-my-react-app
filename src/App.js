@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Hello from "./components/Hello";
 
 function App() {
+  let cityRef = useRef();
   let [list, setList] = useState([{ city: "delhi", desc: "Delhi desc.." }]);
 
   const addMoreRecord = () => {
-    let newRecord = { city: "TVM", desc: "TVM desc.." };
+    let newRecord = { city: cityRef.current.value, desc: "TVM desc.." };
     let newList = [newRecord, ...list];
     setList(newList);
+
+    cityRef.current.value = "";
   };
 
   return (
@@ -15,7 +18,18 @@ function App() {
       <h1>Predefine Function By Browser!</h1>
 
       <div>
-        <input type="button" value="Add More Record" onClick={addMoreRecord} />
+        <input
+          ref={cityRef}
+          type="text"
+          className="form-control form-control-lg "
+          placeholder="Enter City.."
+        />
+        <input
+          type="button"
+          className="btn btn-primary my-1 w-100"
+          value="Add More Record"
+          onClick={addMoreRecord}
+        />
       </div>
 
       {list.map((item, index) => (
