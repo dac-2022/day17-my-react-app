@@ -1,27 +1,23 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  let [secondCounter, setSecondCounter] = useState();
-  let [minuteCounter, setMinuteCounter] = useState();
-  let [hourCounter, setHourCounter] = useState();
+  let [secondCounter, setSecondCounter] = useState(0);
+  let [minuteCounter, setMinuteCounter] = useState(0);
+  let [hourCounter, setHourCounter] = useState(0);
 
   useEffect(() => {
-    // Initilzation
     let date = new Date();
     setSecondCounter(date.getSeconds());
     setMinuteCounter(date.getMinutes());
     setHourCounter(date.getHours());
 
-    let clock = setTimeout(() => {
-      if (secondCounter == 60) {
-        setSecondCounter(0);
-      } else {
-        setSecondCounter(secondCounter + 1);
-      }
+    // initilation ::
+    let t = setTimeout(() => {
+      setSecondCounter(secondCounter + 1);
     }, 1000);
 
-    // Un Intitialize
-    return () => clearTimeout(clock);
+    // uninitialize
+    return () => clearTimeout(t);
   }, [secondCounter]);
 
   return (
