@@ -1,15 +1,34 @@
-import Hello from "./components/Hello";
-
 function App() {
-  let list = Array.from({ length: 100 });
-
   return (
     <div>
-      <h1>Predefine Function By Browser!</h1>
+      <h1 id="id1">Hello World</h1>
 
-      {list.map((item, index) => (
-        <Hello key={index} />
-      ))}
+      <Hie msg="Abcd" title="delhi" />
+      <Hie msg="pqrs" title="calcutta" />
+      <Hie msg="mlns" title="kochi" />
+
+      <hr />
+      <Anything username="Rahul" />
+      <Anything username="Rohit" />
+      <Anything username="Sanju" />
+    </div>
+  );
+}
+
+function Hie({ msg, title }) {
+  return (
+    <div>
+      <h1>
+        Hie.. {msg} {title}
+      </h1>
+    </div>
+  );
+}
+
+function Anything(props) {
+  return (
+    <div>
+      <h1>Hello {props.username}</h1>
     </div>
   );
 }
