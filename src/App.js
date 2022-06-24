@@ -8,7 +8,7 @@ function App() {
       <h1>Predefine Function By Browser!</h1>
 
       {list.map((item, index) => (
-        <Hello item={item} key={index} />
+        <Hello city={item} key={index} />
       ))}
     </div>
   );

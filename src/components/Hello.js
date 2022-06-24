@@ -1,10 +1,10 @@
 import World from "./World";
 
-function Hello({ item }) {
+function Hello({ city }) {
   return (
     <div className="row">
       <div className="col-12 col-md-6">
-        <World item={item} />
+        <World cityName={city} />
       </div>
     </div>
   );

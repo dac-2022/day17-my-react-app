@@ -1,9 +1,9 @@
-function World({ item }) {
+function World({ cityName }) {
   return (
     <div className="card">
       <div className="card-header">Featured</div>
       <div className="card-body">
-        <h5 className="card-title">Special {item} treatment</h5>
+        <h5 className="card-title">Special {cityName} treatment</h5>
         <p className="card-text">
           With supporting text below as a natural lead-in to additional content.
         </p>
